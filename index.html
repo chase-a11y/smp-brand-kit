@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMP Consulting — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1A1815;
+  --ink-2: #2E2A24;
+  --pine: #2C3B2E;
+  --pine-deep: #1E2B20;
+  --pine-soft: #3D5140;
+  --cream: #F1ECE2;
+  --paper: #FBF8F2;
+  --paper-2: #FDFBF5;
+  --ochre: #C8924B;
+  --ochre-deep: #A87645;
+  --rust: #8B4F2E;
+  --muted: #6B5D4F;
+  --stone: #9C8E7D;
+  --rule: #D9D0BE;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.serif { font-family: "Newsreader", Georgia, serif; font-weight: 400; letter-spacing: -.01em; }
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+hr.rule { border: 0; border-top: 1px solid var(--rule); margin: 56px 0; }
+
+/* Masthead */
+.masthead { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); }
+.masthead .eyebrow { color: var(--rust); margin-bottom: 10px; }
+.masthead h1 { font-family: "Newsreader", serif; font-weight: 400; font-size: clamp(36px, 5vw, 52px); line-height: 1.05; margin: 0; letter-spacing: -.02em; }
+.masthead h1 em { font-style: italic; color: var(--rust); }
+.masthead .meta { display: flex; gap: 40px; margin-top: 20px; color: var(--muted); font-size: 13px; }
+
+/* Sections */
+section { margin-top: 64px; }
+.sec-head { display: flex; align-items: baseline; gap: 20px; border-bottom: 1px solid var(--rule); padding-bottom: 14px; margin-bottom: 32px; flex-wrap: wrap; }
+.sec-head .num { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .14em; color: var(--rust); }
+.sec-head h2 { font-family: "Newsreader", serif; font-weight: 400; font-size: clamp(24px, 3vw, 32px); line-height: 1.15; margin: 0; letter-spacing: -.015em; }
+.sec-head .sub { margin-left: auto; color: var(--muted); font-size: 13px; max-width: 360px; text-align: right; }
+
+/* Mark display */
+.mark-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.mark-stage { aspect-ratio: 1; background: var(--paper); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; }
+.mark-stage svg { width: 50%; height: auto; }
+.mark-notes h3 { font-family: "Newsreader", serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0 0 14px; }
+.mark-notes h3 em { font-style: italic; color: var(--rust); }
+.mark-notes p { color: var(--ink-2); font-size: 14px; line-height: 1.7; margin: 0 0 12px; }
+.specs { padding: 0; margin: 20px 0 0; list-style: none; border-top: 1px solid var(--rule); }
+.specs li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.specs .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .1em; color: var(--rust); min-width: 100px; text-transform: uppercase; }
+.specs .v { color: var(--ink-2); font-size: 13px; }
+
+/* Lockup grid */
+.lockups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.lockup-cell { background: var(--paper); padding: 32px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240px; position: relative; gap: 16px; }
+.lockup-cell.dark { background: var(--ink); }
+.lockup-cell.pine-bg { background: var(--pine); }
+.lockup-cell .tag { position: absolute; top: 12px; left: 14px; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lockup-cell.dark .tag, .lockup-cell.pine-bg .tag { color: var(--stone); }
+.lockup-cell .use { position: absolute; bottom: 12px; left: 14px; font-family: "JetBrains Mono", monospace; font-size: 9px; letter-spacing: .06em; color: var(--stone); }
+.lockup-cell.dark .use, .lockup-cell.pine-bg .use { color: var(--stone); }
+.lockup-cell svg { max-width: 80%; height: auto; }
+
+/* Color palette */
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.swatch { background: var(--paper); border: 1px solid var(--rule); overflow: hidden; }
+.swatch-color { height: 100px; display: flex; align-items: flex-end; padding: 10px 14px; }
+.swatch-color .hex { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .04em; }
+.swatch-color.light-text .hex { color: var(--cream); }
+.swatch-color.dark-text .hex { color: var(--ink); }
+.swatch-body { padding: 14px; }
+.swatch-body h4 { margin: 0 0 2px; font-family: "Newsreader", serif; font-weight: 500; font-size: 17px; }
+.swatch-body .var { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--rust); letter-spacing: .04em; margin-bottom: 6px; }
+.swatch-body .role { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Typography */
+.type-specimen { background: var(--paper); border: 1px solid var(--rule); padding: 32px; margin-bottom: 16px; }
+.type-specimen .name { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+.type-specimen .sample { margin-bottom: 8px; }
+.type-specimen .details { font-size: 12px; color: var(--muted); margin-top: 14px; border-top: 1px solid var(--rule); padding-top: 10px; }
+.type-specimen .weights { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+.type-specimen .weights span { font-size: 13px; }
+
+/* Rules */
+.rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.rule-card { background: var(--paper); border: 1px solid var(--rule); padding: 20px; }
+.rule-card .icon { font-size: 20px; margin-bottom: 8px; }
+.rule-card h4 { font-family: "Newsreader", serif; font-weight: 500; font-size: 17px; margin: 0 0 6px; }
+.rule-card p { font-size: 13px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+.rule-card.do { border-left: 3px solid var(--pine); }
+.rule-card.dont { border-left: 3px solid var(--rust); }
+
+/* Downloads */
+.downloads { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.dl-link { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: var(--paper); border: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-size: 13px; transition: border-color .2s, background .2s; }
+.dl-link:hover { border-color: var(--ochre); background: #FEFCF5; }
+.dl-link .dl-icon { font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--rust); letter-spacing: .1em; text-transform: uppercase; }
+.dl-link .dl-name { font-weight: 500; }
+
+/* Footer */
+footer { margin-top: 64px; padding: 32px 0; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; color: var(--muted); font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; flex-wrap: wrap; gap: 12px; }
+
+@media (max-width: 768px) {
+  .mark-block { grid-template-columns: 1fr; }
+  .sec-head { flex-direction: column; }
+  .sec-head .sub { text-align: left; margin-left: 0; }
+  .masthead .meta { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============== MASTHEAD ============== -->
+<header class="masthead">
+  <div class="mono eyebrow">Brand Kit · v1.0 · May 2026</div>
+  <h1>SMP Consulting <em>Brand Kit</em></h1>
+  <div class="meta">
+    <span>Prepared for internal use + partner reference</span>
+    <span>Direction: Pine &amp; Ochre</span>
+  </div>
+</header>
+
+<!-- ============== 01 / THE MARK ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">01</span>
+    <h2>The Mark</h2>
+    <div class="sub">Three-peak mountain silhouette — built on a grid, works at any size.</div>
+  </div>
+  <div class="mark-block">
+    <div class="mark-stage">
+      <svg viewBox="-110 -70 220 140" aria-label="SMP three-peak mark">
+        <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#1A1815"/>
+      </svg>
+    </div>
+    <div class="mark-notes">
+      <h3>Three peaks. <em>One identity.</em></h3>
+      <p>Three overlapping peaks — one for each pillar: Strategy, Margins, People. The center peak is tallest, grounding the composition. Read it as a mountain range, read it as growth — it works either way.</p>
+      <ul class="specs">
+        <li><span class="k">Construction</span><span class="v">Grid-aligned; all angles 45° or 90°</span></li>
+        <li><span class="k">Min size</span><span class="v">16px wide on screen · 8mm in print</span></li>
+        <li><span class="k">Clear space</span><span class="v">½ × peak-height on every side, always</span></li>
+        <li><span class="k">Fill</span><span class="v">Solid only — no outlines, no gradients, no textures</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 02 / LOCKUPS ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">02</span>
+    <h2>Lockups</h2>
+    <div class="sub">Six approved ways to use the name. Pick the one that fits the surface.</div>
+  </div>
+  <div class="lockups">
+
+    <!-- A: Stacked -->
+    <div class="lockup-cell">
+      <span class="tag">A · Stacked</span>
+      <svg viewBox="0 0 260 260" style="width:70%">
+        <g transform="translate(130 88) scale(.62)">
+          <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#1A1815"/>
+        </g>
+        <text x="130" y="195" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="58" letter-spacing="2" fill="#1A1815">SMP</text>
+        <line x1="92" y1="212" x2="168" y2="212" stroke="#8B4F2E" stroke-width="1"/>
+        <text x="130" y="230" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="3" fill="#6B5D4F">CONSULTING · EST. 2026</text>
+      </svg>
+      <span class="use">Signage, deck covers, social avatars</span>
+    </div>
+
+    <!-- B: Horizontal -->
+    <div class="lockup-cell">
+      <span class="tag">B · Horizontal</span>
+      <svg viewBox="0 0 540 180" style="width:90%">
+        <g transform="translate(60 90) scale(.55)">
+          <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#1A1815"/>
+        </g>
+        <line x1="135" y1="40" x2="135" y2="140" stroke="#D9D0BE" stroke-width="1"/>
+        <text x="155" y="92" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="48" letter-spacing="2" fill="#1A1815">SMP</text>
+        <text x="156" y="118" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" fill="#6B5D4F">SMALL · MIDSIZE · PROVEN</text>
+      </svg>
+      <span class="use">Letterhead, email signature, web nav</span>
+    </div>
+
+    <!-- C: Mark only -->
+    <div class="lockup-cell">
+      <span class="tag">C · Mark</span>
+      <svg viewBox="-110 -70 220 140" style="width:50%">
+        <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#1A1815"/>
+      </svg>
+      <span class="use">Favicons, watermarks, app icons</span>
+    </div>
+
+    <!-- D: Wordmark -->
+    <div class="lockup-cell">
+      <span class="tag">D · Wordmark</span>
+      <svg viewBox="0 0 200 100" style="width:65%">
+        <text x="100" y="65" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="52" letter-spacing="3" fill="#1A1815">SMP</text>
+      </svg>
+      <span class="use">When mark appears nearby</span>
+    </div>
+
+    <!-- E: Badge -->
+    <div class="lockup-cell">
+      <span class="tag">E · Badge</span>
+      <svg viewBox="0 0 160 160" style="width:55%">
+        <circle cx="80" cy="80" r="76" fill="none" stroke="#1A1815" stroke-width="2"/>
+        <g transform="translate(80 64) scale(.32)">
+          <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#1A1815"/>
+        </g>
+        <text x="80" y="118" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="24" letter-spacing="2" fill="#1A1815">SMP</text>
+        <text x="80" y="138" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="2.5" fill="#6B5D4F">EST · MMXXVI</text>
+      </svg>
+      <span class="use">Stamps, seals, embroidery</span>
+    </div>
+
+    <!-- F: Reversed (stacked on dark) -->
+    <div class="lockup-cell dark">
+      <span class="tag">F · Reversed</span>
+      <svg viewBox="0 0 260 260" style="width:70%">
+        <g transform="translate(130 90) scale(.6)">
+          <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#F1ECE2"/>
+        </g>
+        <text x="130" y="195" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="58" letter-spacing="2" fill="#F1ECE2">SMP</text>
+        <line x1="92" y1="212" x2="168" y2="212" stroke="#C8924B" stroke-width="1"/>
+        <text x="130" y="230" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="3" fill="#9C8E7D">CONSULTING · EST. 2026</text>
+      </svg>
+      <span class="use">Dark backgrounds, photography overlays</span>
+    </div>
+
+    <!-- G: Horizontal reversed on pine -->
+    <div class="lockup-cell pine-bg">
+      <span class="tag">G · On Pine</span>
+      <svg viewBox="0 0 540 180" style="width:90%">
+        <g transform="translate(60 90) scale(.55)">
+          <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#F1ECE2"/>
+        </g>
+        <line x1="135" y1="40" x2="135" y2="140" stroke="#6B5D4F" stroke-width="1"/>
+        <text x="155" y="92" font-family="Newsreader, Georgia, serif" font-weight="600" font-size="48" letter-spacing="2" fill="#F1ECE2">SMP</text>
+        <text x="156" y="118" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" fill="#C8924B">SMALL · MIDSIZE · PROVEN</text>
+      </svg>
+      <span class="use">Web hero, pine-background sections</span>
+    </div>
+
+    <!-- H: Mark on pine -->
+    <div class="lockup-cell pine-bg">
+      <span class="tag">H · Mark on Pine</span>
+      <svg viewBox="-110 -70 220 140" style="width:50%">
+        <path d="M -100 50 L -100 30 L -58 -42 L -28 4 L 0 -52 L 28 4 L 58 -42 L 100 30 L 100 50 Z" fill="#F1ECE2"/>
+      </svg>
+      <span class="use">Nav bar, dark UI elements</span>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============== 03 / COLOR PALETTE ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">03</span>
+    <h2>Color Palette</h2>
+    <div class="sub">Pine &amp; Ochre direction — organic, rooted, main-street consulting.</div>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:22px; margin:0 0 16px; letter-spacing:-.01em;">Primary</h3>
+  <div class="palette" style="margin-bottom:32px;">
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#1A1815"><span class="hex">#1A1815</span></div>
+      <div class="swatch-body">
+        <h4>Ink</h4>
+        <div class="var">--ink</div>
+        <div class="role">Primary text, logo mark, headings</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#2C3B2E"><span class="hex">#2C3B2E</span></div>
+      <div class="swatch-body">
+        <h4>Pine</h4>
+        <div class="var">--pine</div>
+        <div class="role">Dark section backgrounds, nav bar, card backs</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#C8924B"><span class="hex">#C8924B</span></div>
+      <div class="swatch-body">
+        <h4>Ochre</h4>
+        <div class="var">--ochre</div>
+        <div class="role">Primary accent, buttons, highlights, dividers</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color dark-text" style="background:#F1ECE2"><span class="hex">#F1ECE2</span></div>
+      <div class="swatch-body">
+        <h4>Cream</h4>
+        <div class="var">--cream</div>
+        <div class="role">Reversed text on dark, light backgrounds</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:22px; margin:0 0 16px; letter-spacing:-.01em;">Extended</h3>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#1E2B20"><span class="hex">#1E2B20</span></div>
+      <div class="swatch-body">
+        <h4>Pine Deep</h4>
+        <div class="var">--pine-deep</div>
+        <div class="role">Darkest pine variant</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#3D5140"><span class="hex">#3D5140</span></div>
+      <div class="swatch-body">
+        <h4>Pine Soft</h4>
+        <div class="var">--pine-soft</div>
+        <div class="role">Lighter pine for gradients</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color dark-text" style="background:#FBF8F2"><span class="hex">#FBF8F2</span></div>
+      <div class="swatch-body">
+        <h4>Paper</h4>
+        <div class="var">--paper</div>
+        <div class="role">Default page background</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#A87645"><span class="hex">#A87645</span></div>
+      <div class="swatch-body">
+        <h4>Ochre Deep</h4>
+        <div class="var">--ochre-deep</div>
+        <div class="role">Darker accent for hover states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#8B4F2E"><span class="hex">#8B4F2E</span></div>
+      <div class="swatch-body">
+        <h4>Rust</h4>
+        <div class="var">--rust</div>
+        <div class="role">Section numbers, rule accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#2E2A24"><span class="hex">#2E2A24</span></div>
+      <div class="swatch-body">
+        <h4>Ink 2</h4>
+        <div class="var">--ink-2</div>
+        <div class="role">Secondary body text</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color light-text" style="background:#6B5D4F"><span class="hex">#6B5D4F</span></div>
+      <div class="swatch-body">
+        <h4>Muted</h4>
+        <div class="var">--muted</div>
+        <div class="role">Tertiary text, metadata, captions</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color dark-text" style="background:#9C8E7D"><span class="hex">#9C8E7D</span></div>
+      <div class="swatch-body">
+        <h4>Stone</h4>
+        <div class="var">--stone-2</div>
+        <div class="role">Light neutral, reversed metadata</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============== 04 / TYPOGRAPHY ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">04</span>
+    <h2>Typography</h2>
+    <div class="sub">Three fonts, clear hierarchy, no ambiguity.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="name">Newsreader — Headings &amp; Display</div>
+    <div class="sample" style="font-family:'Newsreader',serif; font-size:42px; font-weight:400; letter-spacing:-.02em; line-height:1.1;">
+      Strategy. <em style="font-style:italic">Margins</em>. People.
+    </div>
+    <div class="sample" style="font-family:'Newsreader',serif; font-size:24px; font-weight:400; letter-spacing:-.01em; line-height:1.2; color:var(--ink-2);">
+      Most of what we know, <em style="font-style:italic">free to read</em>.
+    </div>
+    <div class="details">
+      <strong>Source:</strong> Google Fonts · <strong>Weights:</strong> 300, 400, 500, 600 + Italic
+      <div class="weights" style="font-family:'Newsreader',serif;">
+        <span style="font-weight:300">Light 300</span>
+        <span style="font-weight:400">Regular 400</span>
+        <span style="font-weight:500">Medium 500</span>
+        <span style="font-weight:600">SemiBold 600</span>
+        <span style="font-weight:400; font-style:italic">Italic 400</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="name">Inter Tight — Body Text</div>
+    <div class="sample" style="font-family:'Inter Tight',sans-serif; font-size:16px; line-height:1.6; max-width:60ch; color:var(--ink-2);">
+      Whether you're a startup finding your first customers or a small business ready to grow — the most important thing you can do is have real conversations with the people you serve.
+    </div>
+    <div class="details">
+      <strong>Source:</strong> Google Fonts · <strong>Weights:</strong> 400, 500, 600, 700
+      <div class="weights" style="font-family:'Inter Tight',sans-serif;">
+        <span style="font-weight:400">Regular 400</span>
+        <span style="font-weight:500">Medium 500</span>
+        <span style="font-weight:600">SemiBold 600</span>
+        <span style="font-weight:700">Bold 700</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="name">JetBrains Mono — Labels, Metadata &amp; Taglines</div>
+    <div class="sample" style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);">
+      Startup &amp; small business consulting · Est. 2026
+    </div>
+    <div class="sample" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--rust); margin-top:8px;">
+      Small · Midsize · Proven
+    </div>
+    <div class="details">
+      <strong>Source:</strong> Google Fonts · <strong>Weights:</strong> 400, 500
+      <div class="weights" style="font-family:'JetBrains Mono',monospace;">
+        <span style="font-weight:400">Regular 400</span>
+        <span style="font-weight:500">Medium 500</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============== 05 / USAGE RULES ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">05</span>
+    <h2>Usage Rules</h2>
+    <div class="sub">Keep it consistent. When in doubt, keep it simple.</div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card do">
+      <div class="icon">&#x2714;</div>
+      <h4>Use on approved backgrounds</h4>
+      <p>Ink mark on Paper/Cream. Cream mark on Ink/Pine. These are the only two modes.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="icon">&#x2714;</div>
+      <h4>Respect clear space</h4>
+      <p>Always maintain ½ × peak-height of clear space around the mark. No text, borders, or graphics inside this zone.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="icon">&#x2714;</div>
+      <h4>Use approved lockups</h4>
+      <p>Pick from the six lockups in §02. Never rearrange the mark, wordmark, or tagline into a new composition.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="icon">&#x2714;</div>
+      <h4>Solid fill only</h4>
+      <p>The mark is always a single solid color. No gradients, no outlines, no drop shadows, no textures.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="icon">&#x2718;</div>
+      <h4>Don't stretch or rotate</h4>
+      <p>The mark must maintain its original proportions. Never squash, stretch, skew, or rotate it.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="icon">&#x2718;</div>
+      <h4>Don't add effects</h4>
+      <p>No drop shadows, bevels, glows, emboss, or any other effect. The mark speaks for itself.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="icon">&#x2718;</div>
+      <h4>Don't use unapproved colors</h4>
+      <p>The mark should only appear in Ink (#1A1815) or Cream (#F1ECE2). Never in Ochre, Rust, or arbitrary colors.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="icon">&#x2718;</div>
+      <h4>Don't go below minimum size</h4>
+      <p>16px on screen, 8mm in print. Below this, the three peaks become indistinct.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ============== 06 / DOWNLOADS ============== -->
+<section>
+  <div class="sec-head">
+    <span class="num">06</span>
+    <h2>Downloads</h2>
+    <div class="sub">All SVG — scalable to any size, no quality loss.</div>
+  </div>
+
+  <div class="downloads">
+    <a class="dl-link" href="logo/smp-mark.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Mark (dark)</span>
+    </a>
+    <a class="dl-link" href="logo/smp-mark-reversed.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Mark (light)</span>
+    </a>
+    <a class="dl-link" href="logo/smp-mark-currentcolor.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Mark (currentColor)</span>
+    </a>
+    <a class="dl-link" href="logo/smp-stacked.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Stacked lockup</span>
+    </a>
+    <a class="dl-link" href="logo/smp-stacked-reversed.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Stacked (reversed)</span>
+    </a>
+    <a class="dl-link" href="logo/smp-horizontal.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Horizontal lockup</span>
+    </a>
+    <a class="dl-link" href="logo/smp-horizontal-reversed.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Horizontal (reversed)</span>
+    </a>
+    <a class="dl-link" href="logo/smp-wordmark.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Wordmark</span>
+    </a>
+    <a class="dl-link" href="logo/smp-badge.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Badge monogram</span>
+    </a>
+    <a class="dl-link" href="logo/favicon.svg" download>
+      <span class="dl-icon">SVG</span>
+      <span class="dl-name">Favicon</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>SMP Consulting · Brand Kit v1.0</span>
+  <span>May 2026</span>
+</footer>
+
+</div>
+</body>
+</html>
